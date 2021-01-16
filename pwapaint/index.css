@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #eee;
+}
+
+body > * {
+  position: absolute;
+}
+
+.btn-tools {
+  border-width: 4px;
+  border-style: outset;
+}
+
+.btn-tools.active {
+  filter: invert();
+}
+
+#drawingarea {
+  display: block;
+}

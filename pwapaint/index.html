@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="manifest" href="pwapaint.webmanifest">
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="shortcut icon" href="./media/appicon.svg">
+  <link rel="icon" href="./media/appicon.svg">
+  <title>pwapaint</title>
+</head>
+<body>
+  <canvas id="drawingarea" height="100%" width="100%" style="z-index: -5;">
+  </canvas>
+  <button style="left: 1em; top: 1em; z-index: 5;" class="btn-tools active" id='btn-tools-pen'>
+    <img src="./media/pencil.svg" style="width: 3em; height: 3em;">
+  </button>
+  <button style="left: 5em; top: 1em; z-index: 5;" class="btn-tools" id='btn-tools-eraser'>
+    <img src="./media/eraser.svg" style="width: 3em; height: 3em;">
+  </button>
+  <script src="./index.js"></script>
+  <script src="./serviceworker_loader.js"></script>
+  <script>
+    ['pen', 'eraser'].forEach((toolName) => {
+      const elem = document.getElementById('btn-tools-' + toolName);
+      elem.addEventListener('click', (event) => {
+        for (const e of document.getElementsByClassName('btn-tools'))
+          e.classList.remove('active');
+        // note: event.target may be img tag
+        elem.classList.add('active');
+        changeTool(toolName);
+      });
+    });
+  </script>
+</body>
+</html>

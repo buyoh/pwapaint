@@ -1,0 +1,16 @@
+{
+  "name": "pwapaint",
+  "short_name": "pwapaint",
+  "description": "a very simple paint application",
+  "icons": [
+    {
+      "src": "/pwapaint/media/appicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/pwapaint/index.html",
+  "display": "fullscreen",
+  "theme_color": "#333",
+  "background_color": "#eee"
+}
