@@ -10,6 +10,16 @@ let screenContext = null;
 let lastpoints = null;
 let hold = false;
 
+function createOffscreenCanvas(width, height) {
+  if (typeof OffscreenCanvas !== "undefined") {
+    return new OffscreenCanvas(width, height);
+  }
+  const cv = document.createElement("canvas");
+  cv.width = width;
+  cv.height = height;
+  return cv;
+}
+
 function paintCanvas() {
   const screenContext = canvas.getContext("2d");
   screenContext.clearRect(0, 0, canvas.width, canvas.height);
@@ -94,7 +104,10 @@ function main() {
   canvas.addEventListener("touchcancel", (e) => onCanvasPenUp(), false);
   screenContext = canvas.getContext("2d");
 
-  offscreenCanvas = new OffscreenCanvas(1920, 1920);
+  offscreenCanvas = createOffscreenCanvas(
+    window.screen.availWidth,
+    window.screen.availHeight
+  );
   context = offscreenCanvas.getContext("2d");
   changeTool("pen");
 

@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API/Using_Service_Workers
-const versionName = "v1";
+const versionName = "v2";
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(versionName).then((cache) => {
