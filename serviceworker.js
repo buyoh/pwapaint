@@ -1,10 +1,12 @@
 // https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API/Using_Service_Workers
-const versionName = "v2";
+const versionName = "v3";
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(versionName).then((cache) => {
       return cache.addAll([
         "/pwapaint/media/appicon.svg",
+        "/pwapaint/media/eraser.svg",
+        "/pwapaint/media/pencil.svg",
         "/pwapaint/index.css",
         "/pwapaint/index.html",
         "/pwapaint/index.js",
