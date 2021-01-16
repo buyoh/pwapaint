@@ -1,6 +1,8 @@
 # pwa paint
 
-## localhost
+github pages: https://buyoh.github.io/pwapaint/
+
+## execute under localhost
 
 access `https://localhost:443/pwapaint`
 
