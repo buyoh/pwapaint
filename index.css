@@ -9,6 +9,7 @@ html {
 
 body > * {
   position: absolute;
+  overscroll-behavior: contain;
 }
 
 .btn-tools {
